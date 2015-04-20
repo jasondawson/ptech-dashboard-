@@ -1,0 +1,36 @@
+body, html {
+	height: 100%;
+	margin: 0;
+}
+
+ul {
+	list-style-type: none;
+	padding-left: 0px;
+	margin-left: 0px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.plus-sign {
+	margin-top: 1.5em;
+}
+
+.glyphicon {
+	margin: right;
+}
+.task-div {
+	/*background-color: black;*/
+	/*border: 1px red solid;*/
+	height: 100%;
+}
+
+.main-feed {
+	/*border: 1px red solid;*/
+}
+
+.right-div {
+	/*background-color: blue;*/
+	/*border: 1px red solid;*/
+	height: 100%;
+}
