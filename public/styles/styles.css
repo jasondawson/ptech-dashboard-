@@ -21,12 +21,13 @@ ul {
 }
 .task-div {
 	/*background-color: black;*/
-	/*border: 1px red solid;*/
+	/*border-right: 1px black solid;*/
 	height: 100%;
 }
 
-.main-feed {
-	/*border: 1px red solid;*/
+.center-column {
+	border-right: 1px black solid;
+	border-left: 1px black solid;
 }
 
 .right-div {
