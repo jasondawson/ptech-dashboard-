@@ -12,6 +12,15 @@ ul {
 	justify-content: space-between;
 }
 
+h3 {
+	margin-top: 0px;
+}
+
+.login-form {
+	width: 33.33333333%;
+	margin: 0 auto;
+}
+
 .plus-sign {
 	margin-top: 1.5em;
 }
@@ -34,4 +43,9 @@ ul {
 	/*background-color: blue;*/
 	/*border: 1px red solid;*/
 	height: 100%;
+}
+
+.main-logo {
+	max-height: 100%;
+	padding: 0;
 }
