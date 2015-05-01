@@ -6,7 +6,7 @@ app.service('service', function($firebase, $q){
     	return $firebase(new Firebase(firebaseUrl + 'users/' + userId + '/things')).$asArray();
   	}
   	this.addTask = function() {
-		return $firebase(new Firebase(firebaseUrl + '/tasks'))
+		return $firebase(new Firebase(firebaseUrl + 'tasks/'))
 	}
 
 

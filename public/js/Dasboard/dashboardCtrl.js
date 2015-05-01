@@ -1,6 +1,6 @@
 var app = angular.module("PTDashboard");
 
-app.controller('dashboardCtrl', function($scope, tasksRef, service) {
+app.controller('dashboardCtrl', function($scope, tasksRef, service, $firebase) {
 
 	$scope.tasks = tasksRef.$asArray();
 
@@ -14,6 +14,9 @@ app.controller('dashboardCtrl', function($scope, tasksRef, service) {
 		$scope.dueDate = "";
 		$scope.task = "";
 	}
+
+	var messageRef
+	$scope.messages = $firebase(messageRef);
   // $scope.things = thingsReference;
   // $scope.addThing = function(){
   //   $scope.things.$add($scope.thing);

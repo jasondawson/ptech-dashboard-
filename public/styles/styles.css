@@ -37,6 +37,7 @@ h3 {
 .center-column {
 	border-right: 1px black solid;
 	border-left: 1px black solid;
+	height: 100vh;
 }
 
 .right-div {
@@ -48,4 +49,12 @@ h3 {
 .main-logo {
 	max-height: 100%;
 	padding: 0;
+}
+
+.chat {
+	margin-bottom: 21px;
+}
+
+.sub-divs {
+	border-bottom: 1px black solid;
 }
