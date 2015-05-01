@@ -11,7 +11,7 @@ app.service('service', function($firebase, $q){
 
 
 
-	var firebaseUrl = 'https://pt-dashboard.firebaseio.com/'
+	var firebaseUrl = 'https://jcd.firebaseio.com/ptech/'
 
 	var firebaseLogin = new Firebase(firebaseUrl);
 
@@ -32,7 +32,7 @@ app.service('service', function($firebase, $q){
     };
 
     this.login = function(user, cb) {
-    	var ref = new Firebase("https://pt-dashboard.firebaseio.com/");
+    	var ref = new Firebase("https://jcd.firebaseio.com/ptech");
 			ref.authWithPassword({
 			  email    : user.email,
 			  password : user.password

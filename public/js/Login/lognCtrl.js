@@ -28,8 +28,11 @@ app.controller('lognCtrl', function($scope, service, $location) {
 	};
 
 	  var loginCallback = function(user){
+	  	console.log('in lognCtrl callback');
 	    user.uid = user.uid.replace('simplelogin:', '');
+	    console.log(user.uid);
 	    $scope.$apply(function(){
+	    	console.log('in apply');
 	      $location.path('/dashboard/' + user.uid)
 	    });
 	  };

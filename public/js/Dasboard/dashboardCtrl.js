@@ -1,21 +1,24 @@
 var app = angular.module("PTDashboard");
 
 app.controller('dashboardCtrl', function($scope, tasksRef, service, $firebase) {
+	var vm = this;
 
-	$scope.tasks = tasksRef.$asArray();
+	vm.tasks = tasksRef.$asArray();
 
-	$scope.submitTask = function(title, dueDate, task) {
-		$scope.tasks.$add({
-			title: $scope.title,
-			dueDate: $scope.dueDate,
-			task: $scope.task
+	vm.submitTask = function() {
+		console.log('submitTask');
+		vm.tasks.$add({
+			title: vm.title,
+			dueDate: vm.dueDate,
+			task: vm.task
 		});
-		$scope.title = "";
-		$scope.dueDate = "";
-		$scope.task = "";
+		vm.tasks.$save();
+		vm.title = "";
+		vm.dueDate = "";
+		vm.task = "";
 	}
 
-	var messageRef
+	var messageRef = new Firebase('https://jcd.firebaseio.com/ptech/messages');
 	$scope.messages = $firebase(messageRef);
   // $scope.things = thingsReference;
   // $scope.addThing = function(){
