@@ -8,7 +8,19 @@ app.config(function($routeProvider) {
 	})
 	.when ('/dashboard', {
 		templateUrl: "js/Dasboard/dashboard.html",
-		controller: "dashboardCtrl"
+		controller: "dashboardCtrl",
+		resolve: {
+			tasksRef: function(service, $route){
+ 				return service.addTask();
+ 			}
+	    	//userReference: function(firebaseService, $route){
+	     //    	return firebaseService.getUser($route.current.params.userId);
+	     //  	},
+	      	// thingsReference: function(firebaseService, $route){
+	       //  	return service.getTasks($route.current.params.userId);
+	      	// }
+
+	    }
 	})
 	.otherwise({
 		redirectTo: "/"

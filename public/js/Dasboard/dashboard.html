@@ -5,27 +5,27 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Tasks</h4>
+        <h3 class="modal-title" id="myModalLabel">Tasks</h3>
       </div>
       <div class="modal-body">
         <form>
         	<div class="row">
 			  <div class="form-group col-xs-4">
 			    <label for="exampleInputEmail1">Title</label>
-			    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Title">
+			    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Title" ng-model="title">
 			  </div>
 			  <div class="form-group col-xs-2">
 			    <label for="exampleInputEmail1">Due Date</label>
-			    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Date">
+			    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Date" ng-model="dueDate">
 			  </div>
 			</div>
 		  <label for="exampleInputEmail1">Task</label>
-		  <textarea class="form-control" rows="3" placeholder="Updates..."></textarea>
+		  <textarea class="form-control" rows="3" ng-model="task" placeholder="Updates..."></textarea>
 		</form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Submit</button>
+        <button type="button" class="btn btn-primary" ng-click="submitTask()">Submit</button>
       </div>
     </div>
   </div>
@@ -38,7 +38,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Update</h4>
+        <h3 class="modal-title" id="myModalLabel">Update</h3>
       </div>
       <div class="modal-body">
         <form>
@@ -66,7 +66,7 @@
 				<div class="sub-divs">
 					<ul calss"sub-divs list-inline">
 						<li>
-							<div><h3>Tasks</h3></div>
+							<div><h2>Tasks</h2></div>
 						</li>
 						<li>
 							<button type="button" class="btn btn-sm glyphicon glyphicon-plus plus-sign" aria-hidden="true" data-toggle="modal" data-target="#tasks"></button> 
@@ -78,7 +78,7 @@
 				<div class="sub-divs main-feed">
 					<ul calss"sub-divs list-inline">
 						<li>
-							<div><h3>Updates</h3></div>
+							<div><h2>Updates</h2></div>
 						</li>
 						<li>
 							<button type="button" class="btn btn-sm glyphicon glyphicon-plus plus-sign" aria-hidden="true" data-toggle="modal" data-target="#updates"></button> 
@@ -88,7 +88,7 @@
 			</div>
 			<div class="col-md-3 right-div">
 				<div class="sub-divs">	
-					<h3>Chat</h3>
+					<h2>Chat</h2>
 				</div>
 			</div>
 	</div>

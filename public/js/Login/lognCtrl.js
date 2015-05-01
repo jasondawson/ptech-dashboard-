@@ -3,7 +3,7 @@ var app = angular.module("PTDashboard");
 app.controller('lognCtrl', function($scope, service, $location) {
   
 
-
+  $scope.details = {};
 
 
   // $scope.status = 'Register';
@@ -35,7 +35,9 @@ app.controller('lognCtrl', function($scope, service, $location) {
 	  };
 
 	$scope.login = function () {
-    	return authService.login($scope.details, loginCallback);
+    	return service.login($scope.details, loginCallback);
+    	$location.path('/dashboard');
+
   	};
 
 	$scope.register = function() {

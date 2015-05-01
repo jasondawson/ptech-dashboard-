@@ -1,7 +1,16 @@
 var app = angular.module("PTDashboard");
 
-app.service('service', function($firebase){
+app.service('service', function($firebase, $q){
 	
+	this.getTasks = function(userId){
+    	return $firebase(new Firebase(firebaseUrl + 'users/' + userId + '/things')).$asArray();
+  	}
+  	this.addTask = function() {
+		return $firebase(new Firebase(firebaseUrl + '/tasks'))
+	}
+
+
+
 	var firebaseUrl = 'https://pt-dashboard.firebaseio.com/'
 
 	var firebaseLogin = new Firebase(firebaseUrl);
@@ -22,12 +31,67 @@ app.service('service', function($firebase){
 	    }
     };
 
-      this.login = function(user, cb){
-	    firebaseLogin.authWithPassword({
-	      email : user.email,
-	      password : user.password
-	    }, loginCallback);
-	  };
+    this.login = function(user, cb) {
+    	var ref = new Firebase("https://pt-dashboard.firebaseio.com/");
+			ref.authWithPassword({
+			  email    : user.email,
+			  password : user.password
+			}, function(error, authData) {
+			if (error) {
+			    console.log("Login Failed!", error);
+			} else {
+			    console.log("Authenticated successfully with payload:", authData);
+			    cb(authData);
+			}
+		});
+    }
+
+
+   //    this.login = function(user, cb){
+	  //   firebaseLogin.authWithPassword({
+	  //     email : user.email,
+	  //     password : user.password
+	  //   }, loginCallback);
+	  // };
+	  // this.login = function(users) {
+		 //  var ref = new Firebase("https://pt-dashboard.firebaseio.com/");
+			// ref.authWithPassword({
+			//   email    : user.email,
+			//   password : user.password
+			// }, function(error, authData) {
+			//   if (error) {
+			//     console.log("Login Failed!", error);
+			//   } else {
+			//     console.log("Authenticated successfully with payload:", authData);
+			//   }
+		 //  });
+	  // }
+
+	// this.login = function(email, password) {
+	// 	var ref = new Firebase("https://pt-dashboard.firebaseio.com/");
+	// 	var dfd = $q.defer();
+ //    var loggedInId;
+	// 	ref.authWithPassword({
+ //  		email    : "email",
+ //  		password : "password"
+	// 	}, function(error, authData) {
+ //  		if (error) {
+ //    		console.log("Login Failed!", error);
+ //    		dfd.reject(error);
+ //  		} else if (authData) {
+            // var usersRef = new Firebase('https://pt-dashboard.firebaseio.com/');
+            // var currentId = usersRef.getAuth().uid.replace('simplelogin:','');
+  
+            // var userRef = $firebase(new Firebase('https://pt-dashboard.firebaseio.com/users/' + currentId));
+            // currentUser = userRef.$asObject();
+ 
+ //            dfd.resolve(currentUser);  
+
+            
+ //  		}
+	// 	});
+	// 	return dfd.promise;
+	// }
 
 
 	this.register = function(user, cb){
@@ -69,6 +133,7 @@ app.service('service', function($firebase){
 	                }
 	              });
 	        }
+
 	    });
-  };
+  	};
 })
