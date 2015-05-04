@@ -25,7 +25,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" ng-click="vm.submitTask()">Submit</button>
+        <button class="btn btn-primary" ng-click="vm.submitTask()">Submit</button>
       </div>
     </div>
   </div>
@@ -60,11 +60,11 @@
 
 <!-- ************MAIN CONTENT************ -->
 
-<div calss="container">
-	<div calss="row">
+<div class="container">
+	<div class="row">
 			<div class="col-md-3 task-div">
 				<div class="sub-divs">
-					<ul calss"sub-divs list-inline">
+					<ul class"sub-divs list-inline">
 						<li>
 							<div><h2>Tasks</h2></div>
 						</li>
@@ -73,10 +73,18 @@
 						</li>
 					</ul>
 				</div>
+				<div class="taskItem" ng-repeat="task in vm.tasks">
+					<h4>Title</h4>
+					<h5>{{task.title}}</h5>
+					<h5>Description</h5>
+					<h6>{{task.task}}</h6>
+					<h5>Due Date</h5>
+					<h6>{{task.dueDate}}</h6>
+				</div>
 			</div>
 			<div class="col-md-6 center-column">
 				<div class="sub-divs main-feed">
-					<ul calss"sub-divs list-inline">
+					<ul class"sub-divs list-inline">
 						<li>
 							<div><h2>Updates</h2></div>
 						</li>

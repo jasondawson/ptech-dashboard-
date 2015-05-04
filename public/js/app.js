@@ -9,6 +9,7 @@ app.config(function($routeProvider) {
 	.when ('/dashboard/:uid', {
 		templateUrl: "js/Dasboard/dashboard.html",
 		controller: "dashboardCtrl",
+		controllerAs: 'vm',
 		resolve: {
 			tasksRef: function(service, $route){
  				return service.addTask();

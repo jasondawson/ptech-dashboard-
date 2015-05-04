@@ -6,13 +6,14 @@ app.controller('dashboardCtrl', function($scope, tasksRef, service, $firebase) {
 	vm.tasks = tasksRef.$asArray();
 
 	vm.submitTask = function() {
-		console.log('submitTask');
+		//console.log('submitTask');
 		vm.tasks.$add({
 			title: vm.title,
 			dueDate: vm.dueDate,
 			task: vm.task
 		});
 		vm.tasks.$save();
+		$('#tasks').modal('hide');
 		vm.title = "";
 		vm.dueDate = "";
 		vm.task = "";
